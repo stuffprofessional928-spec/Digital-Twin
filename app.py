@@ -13,6 +13,7 @@ load_dotenv(override=True)
 api_key = os.getenv("OPENROUTER_API_KEY")
 hf_token = os.getenv("HF_TOKEN")
 openrouter_url = os.getenv("OPENROUTER_URL")
+port = os.getenv("PORT") or 7860
 
 
 
@@ -49,4 +50,4 @@ if __name__ == "__main__":
         title="Vijay's Digital Twin",
         description="Talk to my AI twin about my career",
         chatbot=gr.Chatbot(show_label=False),
-    ).launch(css=CSS, js=JS, theme=themes.Ocean())
+    ).launch(css=CSS, js=JS, theme=themes.Ocean(), server_name="0.0.0.0", server_port=port)
