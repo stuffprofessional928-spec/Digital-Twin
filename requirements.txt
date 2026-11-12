@@ -2,7 +2,7 @@
 #    uv export --no-hashes -o requirements.txt
 -e .
 openai
-dotenv
+python-dotenv
 gradio
 requests
 pypdf
