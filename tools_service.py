@@ -92,17 +92,17 @@ def handle_tool_call(tool_calls):
     for tool_call in tool_calls:
         tool_name = tool_call.function.name
         arguments = json.loads(tool_call.function.arguments)
-        print("tool name ========",tool_name)
-        print("arguments ========", arguments)
+        # print("tool name ========",tool_name)
+        # print("arguments ========", arguments)
         if tool_name == "record_email_tool":
             result = record_email_tool(**arguments)
-            print("first tool ==============",result)
+            # print("first tool ==============",result)
         elif tool_name == "record_user_detail":
             result = record_user_detail(**arguments)
-            print("second tool ==============",result)
+            # print("second tool ==============",result)
         elif tool_name == "record_unknown_questions":
             result = record_unknown_questions(**arguments)
-            print("second tool ==============",result)
+            # print("second tool ==============",result)
         
         results.append({"role":"tool","content": json.dumps(result),"tool_call_id":tool_call.id})
     return results
