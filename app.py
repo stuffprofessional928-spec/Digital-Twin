@@ -13,7 +13,7 @@ load_dotenv(override=True)
 api_key = os.getenv("OPENROUTER_API_KEY")
 hf_token = os.getenv("HF_TOKEN")
 openrouter_url = os.getenv("OPENROUTER_URL")
-port = os.getenv("PORT") or 7860
+port = int(os.getenv("PORT") or 7860)
 
 
 
